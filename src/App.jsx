@@ -17,8 +17,15 @@ export default function App() {
   return (
     <div className="max-w-3xl mx-auto p-4 bg-lex-white text-lex-navy rounded-xl shadow-lg">
       <header className="flex justify-between items-center mb-6">
-        {/* Left – logo */}
-        <Link to="/" className="text-2xl font-bold">LexForum</Link>
+        {/* Left – logo + motto */}
+        <div className="flex items-baseline gap-2">
+          <Link to="/" className="text-2xl font-bold">
+            LexForum
+          </Link>
+          <span className="hidden sm:inline text-sm font-medium text-lex-navy">
+            The place to be for all things Lexington!
+          </span>
+        </div>
 
         {/* Right – action buttons */}
         <div className="flex items-center gap-3">
@@ -26,7 +33,7 @@ export default function App() {
             to={newPostHref}
             className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
           >
-            New Post
+            New Post
           </Link>
 
           {user ? (
@@ -34,14 +41,14 @@ export default function App() {
               onClick={signOut}
               className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
             >
-              Sign out
+              Sign out
             </button>
           ) : (
             <Link
               to="/login"
               className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
             >
-              Sign in
+              Sign in
             </Link>
           )}
         </div>
