@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"   # Netlify runs this
+  publish = "dist"            # Folder Vite outputs
+
+# Optional: tell `netlify dev` to proxy Vite’s dev server
+[dev]
+  framework = "vite"
+
+# Optional: SPA redirect so refreshing nested routes works
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200

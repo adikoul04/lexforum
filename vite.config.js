@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
+// Vite automatically injects every VITE_* variable from .env, .env.local, etc.
 export default defineConfig({
-  plugins: [react()],
-})
+  plugins: [react()]
+});
