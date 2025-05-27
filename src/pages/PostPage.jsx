@@ -116,7 +116,7 @@ export default function PostPage() {
           • <span>{post.upvotes} upvotes</span>
         </div>
 
-        {post.show_image && post.image_url && !imageError && (
+        {post.image_url && !imageError && (
           <img
             src={post.image_url}
             alt=""
