@@ -16,43 +16,54 @@ export default function App() {
 
   return (
     <div className="max-w-3xl mx-auto p-4 bg-lex-white text-lex-navy rounded-xl shadow-lg">
-      <header className="flex justify-between items-center mb-6">
-        {/* Left – logo + motto */}
-        <div className="flex items-baseline gap-2">
-          <Link to="/" className="text-2xl font-bold">
-            LexForum
+      <header className="flex items-center justify-between mb-6 /* 👈 keep old spacing */">
+        {/* ── Logo + motto ── */}
+        <div className="flex items-center gap-3">
+          {/* 1️⃣  Bigger logo + negative margin pulls it out of the flow */}
+          <Link to="/" className="-my-5 shrink-0">      {/* -my-2 ≈ -0.5 rem top & bottom */}
+            <img
+              src="/lexforum-logo.png"
+              alt="LexForum"
+              className="h-20 w-auto sm:h-28 lg:h-32"  /* up from h-20 */
+            />
           </Link>
-          <span className="hidden sm:inline text-sm font-medium text-lex-navy">
+
+          {/* 2️⃣  Motto (unchanged) */}
+          <span className="hidden sm:inline text-md leading-tight font-medium text-lex-navy">
             The place to be for all things Lexington!
           </span>
         </div>
 
-        {/* Right – action buttons */}
+        {/* ── Buttons (unchanged) ── */}
         <div className="flex items-center gap-3">
           <Link
             to={newPostHref}
             className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
           >
-            New Post
+            New&nbsp;Post
           </Link>
 
           {user ? (
             <button
-              onClick={signOut}
+              onClick={async () => {
+                await supabase.auth.signOut();
+                navigate('/');
+              }}
               className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
             >
-              Sign out
+              Sign&nbsp;out
             </button>
           ) : (
             <Link
               to="/login"
               className="bg-lex-gold text-lex-navy px-3 py-1 rounded"
             >
-              Sign in
+              Sign&nbsp;in
             </Link>
           )}
         </div>
       </header>
+
 
       <Outlet />
     </div>

@@ -7,22 +7,43 @@
   @tailwind forms;
 }
 
-/* Site-wide styles */
+/* ------------------------------------------------------------------ */
+/*  Base colors & typography                                           */
+/* ------------------------------------------------------------------ */
+
 body {
-  @apply bg-lex-navy text-lex-white;
+  @apply bg-lex-navy text-lex-white leading-relaxed;
 }
 
-/* Links:
-   – default: Lexington Gold
-   – hover / focus: Lexington Navy (so they stay visible on light backgrounds) */
 a {
+  /* default: Lexington Gold; hover/focus: Lexington Navy */
   @apply text-lex-gold underline hover:text-lex-navy focus:text-lex-navy;
 }
 
-/* Buttons */
-button {
-  @apply bg-lex-gold text-lex-white rounded px-3 py-1 font-medium;
+/* Inputs, selects, textareas */
+.input,
+.select {
+  @apply border border-lex-navy/30 rounded px-3 py-1 bg-white text-lex-navy placeholder:text-lex-navy/50 focus:outline-none focus:ring-2 focus:ring-lex-gold disabled:opacity-50;
 }
-button:hover {
+textarea.input {
+  @apply min-h-[8rem];
+}
+
+/* Buttons */
+button,
+.btn {
+  @apply bg-lex-gold text-lex-navy rounded px-3 py-1 font-medium transition;
+}
+button:hover,
+.btn:hover {
   @apply bg-lex-navy text-lex-gold;
+}
+
+.back-button {
+  @apply inline-block text-sm mb-4 hover:no-underline;
+}
+
+/* Chip / badge */
+.badge {
+  @apply text-xs font-medium bg-lex-navy/10 text-lex-navy px-2 py-0.5 rounded-full;
 }
