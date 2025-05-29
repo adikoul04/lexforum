@@ -1,10 +1,6 @@
-# Web Development Final Project- *LexForum*
+# *LexForum*
 
-Submitted by: **Aditya Koul**
-
-This web app: **A forum where users can go to find activities, events, and anything else related to Lexington, MA**
-
-Time spent: **12** hours spent in total
+Description: **A forum where users can go to find activities, events, and anything else related to Lexington, MA**
 
 App link: [https://lexforum.netlify.app/](https://lexforum.netlify.app/)
 
@@ -24,6 +20,7 @@ App link: [https://lexforum.netlify.app/](https://lexforum.netlify.app/)
         - creation time
         - upvote count
     - Users can search for posts by title
+    - Users can filter post list using predefined flags
 - [x] **Users can interact with each post in different ways**
     - The app includes a separate post page for each created post when clicked, where any additional information is shown, including:
         - content
@@ -55,7 +52,7 @@ I got to use all the skills I learned in CodePath WEB102, and am very fortunate 
 
 ## License
 
-    Copyright [2025] [Aditya Koul]
+    Copyright 2025 Aditya Koul
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
